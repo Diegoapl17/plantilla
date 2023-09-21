@@ -1,0 +1,13 @@
+.blue-button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #toggleStatus {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  

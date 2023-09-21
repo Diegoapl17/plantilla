@@ -1,0 +1,132 @@
+<!-- /top navigation -->
+
+<!-- head -->
+<div class="right_col" role="main">
+
+  <div class="row" style="display: inline-block;">
+
+    <h1>Empleados</h1>
+    <div class="tile_count">
+
+      <!--APARTADO DE AÑADIR FLECHA-
+            <i class="fa-solid fa-backward"></i> -->
+
+
+
+    </div>
+  </div>
+  <!--search-->
+  <div>
+
+    <div class="contenedorBarras">
+      <form class="d-flex">
+        <div class="bbuscar">
+          <nav class="navbar navbar-light bg-light">
+            <form class="container-fluid">
+              <div class="input-group">
+                <span style="border-radius: 40px;  background-color: white" class="input-group-text"
+                  id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i>
+                  <input style="border-radius: 40px; border: none;" type="text" class="form-control "
+                    placeholder="Buscar" aria-label="Nombre de usuario" aria-describedby="basic-addon1"></span>
+              </div>
+            </form>
+          </nav>
+        </div>
+        <!--Boton añadir servicio-->
+        <div class="bañadir"><a href="anadirEmpleado"><button id="generarReporte" class="btn btn-primary" style="border-radius: 40px" class="boton" 
+              style="color:white"><i class="fa-solid fa-plus"></i>Añadir Empleados</button></a>
+        </div>
+      </form>
+    </div>
+
+    <!-- tabla -->
+
+    <div class="row">
+      <div class="container mt-3">
+
+
+
+        <table class="table table-striped" style="font-size: 17px">
+          <thead>
+            <tr>
+              <th>Id empleado</th>
+              <th>Usuario</th>
+              <th>Nombre completo</th>
+              <th>Direccion</th>
+              <th>Correo</th>
+              <th>Telefono</th>
+              <th>Acciones</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>raul123</td>
+              <td>Raul Perez lopoz</td>
+              <td>CLL 77C#92</td>
+              <td>raul@gmail.com</td>
+              <td>30892389</td>
+              <td><a href="editarEmpleado"><i class="fa-solid fa-pen-to-square fa-lg" style="color: #ef850b;"></i></a>
+                <i class="fa-solid fa-trash" style="color: #840705;"></i>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>andresn</td>
+              <td>Andres Berrio Berrio</td>
+              <td>CR 50#02</td>
+              <td>andres@gmail.com</td>
+              <td>23902393</td>
+              <td><a href="editarEmpleado"><i class="fa-solid fa-pen-to-square fa-lg" style="color: #ef850b;"></i></a>
+                <i class="fa-solid fa-trash" style="color: #840705;"></i>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>pepito321</td>
+              <td>Pepito Perez Bustamante</td>
+              <td>TRANSVERAL 02</td>
+              <td>pepito@gmail.com</td>
+              <td>9389238</td>
+              <td><a href="editarEmpleado"><i class="fa-solid fa-pen-to-square fa-lg" style="color: #ef850b;"></i></a>
+                <i class="fa-solid fa-trash" style="color: #840705;"></i>
+              </td>
+            </tr>
+            </tr>
+              <td>4</td>
+              <td>rodolfobb</td>
+              <td>Rodolfo Henao Ochoa</td>
+              <td>CRA 80 #92</td>
+              <td>rodol@gmail.com</td>
+              <td>209129012</td>
+              <td><a href="editarEmpleado"><i class="fa-solid fa-pen-to-square fa-lg" style="color: #ef850b;"></i></a>
+                <i class="fa-solid fa-trash" style="color: #840705;"></i>
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+      
+
+      <!--paginado-->
+      <div class="container mt-3">
+
+        <ul class="pagination justify-content-end">
+          <li class="page-item"><a class="page-link" href="javascript:void(0);"><i
+                class="fa-solid fa-backward-step"></i></a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item active"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="javascript:void(0);"><i
+                class="fa-solid fa-forward-step"></i></a></li>
+        </ul>
+      </div>
+
+
+      <!-- footer content -->
+      <!-- /footer content -->
+    </div>
+  </div>

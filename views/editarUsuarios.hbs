@@ -1,0 +1,120 @@
+<a href="usuarios"> <button style="border-radius: 40px; margin-left: 20%" type="button" class="btn btn-primary"><i
+            class="fa-solid fa-backward"></i>Atras</button></a>
+<div class="d-flex justify-content-center text-center">
+
+    <h1>Editar Usuario</h1>
+
+    <form id="margenForm" onsubmit="editar(event)">
+        <h5 style="font-weight: bold; padding: 2%">Datos del usuario</h5>
+        <div style="padding-top: 5%;" class="d-flex justify-content-center text-center align-items: center">
+            <div class="form-group">
+                <div class="col">
+                    <label for="name">Id Usuario</label>
+                    <div class="input-group">
+                        <input style="border-radius: 40px" type="text" placeholder="1" value="1" class="form-control"
+                            disabled>
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="name">Direccion</label>
+                    <div class="input-group">
+                        <input id="direccion" style="border-radius: 40px" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="name">Correo</label>
+                    <div class="input-group">
+                        <input id="correo" style="border-radius: 40px" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col">
+                    <label for="name">Nombre</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        </div>
+                        <input id="nombre" style="border-radius: 40px" type="text" class="form-control"
+                            placeholder="Nombre">
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="name">Telefono</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        </div>
+                        <input id="telefono" style="border-radius: 40px" type="number" class="form-control"
+                           >
+                    </div>
+                </div>
+                <div class="col">
+                    <label id="estado" for="exampleFormControlSelect1">Rol</label>
+                    <select style="border-radius: 40px" class="form-select" id="exampleFormControlSelect1">
+                        <option></option>
+                        <option >Cliente</option>
+                        <option>Administrador</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        <div class="d-flex justify-content-center text-center">
+            <button style="border-radius: 40px; margin-top: 3%;" type="submit" class="btn btn-primary" id="botoncito"><i
+                    class="fa-solid fa-pen"></i>Editar</button>
+            <script>
+                function editar(event) {
+
+                    event.preventDefault();
+                    let direccion = document.getElementById('direccion').value
+                    let correo = document.getElementById('correo').value
+                    let nombre = document.getElementById('nombre').value
+                    let telefono = document.getElementById('telefono').value
+                    let estado = document.getElementById('estado').value
+                    let expReg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+                    let expRegNom = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}?$/;
+                    let expRegDirec = /^[\w\d# -]+$/;
+                    let verificarCorreo = expReg.test(correo)
+                    let verificarNombre = expRegNom.test(nombre)
+                    let verificarDirecc = expRegDirec.test(direccion)
+
+                    if (direccion == "" || correo == "" || nombre == "" || telefono == "" || estado == "") {
+                        Swal.fire('No se permiten campos vacios')
+                    } else {
+                        if (verificarCorreo && verificarNombre && verificarDirecc) {
+                           Swal.fire({
+                            title: 'Estas seguro?',
+                            text: "Editaras el siguiente usuario",
+                            icon: 'warning',
+                            showCancelButton: true,
+                            confirmButtonColor: '#3085d6',
+                            cancelButtonColor: '#d33',
+                            confirmButtonText: 'Aceptar'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Usuario editado con exito',
+                                    showConfirmButton: false,
+                                })
+                                setTimeout(() => {
+                                    window.location.replace('/usuarios');
+                                }, 2000)
+
+                            }
+                        })
+                        } else {
+                            Swal.fire('No se permiten caracteres especiales')
+                        }
+
+                    }
+                }
+            </script>
+    </form>
+</div>
+
+
+
+
+</div>
+

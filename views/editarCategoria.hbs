@@ -1,0 +1,93 @@
+<a href="categoriaServicio"> <button style="border-radius: 40px; margin-left: 20%" type="button" class="btn btn-primary" ><i class="fa-solid fa-backward"></i>Atras</button></a>
+    <div class="d-flex justify-content-center text-center">
+   
+        <h1>Editar categoria</h1>
+
+        <form id="margenForm" onsubmit="editar(event)">
+        <div style="padding-top: 5%;" class="d-flex justify-content-center text-center align-items: center">
+            <div class="form-group">
+                <div class="col">
+                    <label for="name">Id servicio</label>
+                    <div class="input-group">
+                        <input id="idServicio" style="border-radius: 40px" type="text" value="1" placeholder="1" class="form-control" disabled >
+                    </div>
+                </div>
+                 
+                <div class="col">
+                    <label for="exampleFormControlSelect1">Estado</label>
+                    <select id="estado" style="border-radius: 40px" class="form-select" id="exampleFormControlSelect1" >
+                        <option></option>
+                        <option id="nn" value="fff">Activo</option>
+                        <option id="nn">Inactivo</option>
+                    </select>
+                </div> 
+            </div>
+
+            <div class="form-group">
+                <div class="col">
+                    <label for="name">Nombre categoria</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        </div>
+                        <input id="nombre" style="border-radius: 40px" type="text" class="form-control" placeholder="Nombre">
+                    </div>
+                </div>
+                
+                
+            </div>
+
+        </div>
+<div class="d-flex justify-content-center text-center">
+            <button style="border-radius: 40px" type="button" class="btn btn-primary" id="botoncito"
+                onclick="editar()"><i class="fa-solid fa-pen"></i>Editar</button>
+            <script>
+                function editar() {
+    let idServicio = document.getElementById("idServicio").value;
+    let estado = document.getElementById("estado").value;
+    let nombre = document.getElementById("nombre").value;
+  
+
+  let expRegNom = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}?$/;
+
+  let verificarNombreP = expRegNom.test(nombre); 
+     if (
+    idServicio == "" ||
+    estado == "" ||
+    nombre == "" 
+    
+  ) {
+    Swal.fire("No se permiten campos vacios");
+  } else {
+    if (verificarNombreP) {
+    Swal.fire({ 
+        title: 'Estas seguro?',
+        text: "Editaras la siguiente categoria de servicio",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Aceptar!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+            icon: 'success',
+        title: 'Categoria editado con exito',
+        showConfirmButton: false,
+    })
+    setTimeout(()=>{
+        window.location.replace('/categoriaServicio');
+    },2000)
+
+        }
+    })
+    }
+} 
+}
+            </script>   
+    </form>
+    </div>
+
+
+
+   
+</div>

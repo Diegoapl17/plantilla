@@ -1,0 +1,155 @@
+<!-- /top navigation -->
+
+<!-- head -->
+<div class="right_col" role="main">
+
+    <div class="row" style="display: inline-block;">
+
+        <h1>Proveedor</h1>
+        <div class="tile_count">
+
+            <!--APARTADO DE AÑADIR FLECHA-
+            <i class="fa-solid fa-backward"></i> -->
+
+
+
+        </div>
+    </div>
+    <!--search-->
+    <div>
+
+        <div class="contenedorBarras">
+            <form class="d-flex">
+                <div class="bbuscar">
+                    <nav class="navbar navbar-light bg-light">
+                        <form class="container-fluid">
+                            <div class="input-group">
+                                <span style="border-radius: 40px;  background-color: white" class="input-group-text"
+                                    id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i>
+                                    <input style="border-radius: 40px; border: none;" type="text" class="form-control "
+                                        placeholder="Buscar" aria-label="Nombre de usuario"
+                                        aria-describedby="basic-addon1"></span>
+                            </div>
+                        </form>
+                    </nav>
+                </div>
+                <!--Boton añadir rol-->
+                <div class="bañadir"><a href="anadirProveedor"><button class="btn btn-primary"
+                            style="border-radius: 40px" class="boton" style="color:white"><i
+                                class="fa-solid fa-plus"></i>Añadir proveedor</button></a>
+                </div>
+            </form>
+        </div>
+
+        <!-- tabla -->
+
+        <div class="row">
+            <div class="container mt-3">
+
+
+
+                <table class="table table-striped" style="font-size: 17px">
+                    <thead>
+                        <tr>
+                            <th>Id proveedor</th>
+                            <th>Nombre </th>
+                            <th>Direccion</th>
+                            <th>Telefono</th>
+                            <th>Correo</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Marcos Lopez</td>
+                            <td>Carrera 56A No. 51 - 81</td>
+                            <td>22222</td>
+                            <td>ml@gmail.com</td>
+                            <td><a href="editarProveedor"><i class="fa-solid fa-pen-to-square fa-lg"
+                                        style="color: #ef850b;"></i></a>
+                                <div class="switch">
+                                    <input type="checkbox" class="toggleSwitch" id="toggleSwitch1">
+                                    <label class="toggleLabel" for="toggleSwitch1"></label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Manuela Gomez</td>
+                            <td>Carrera 22 No. 17-31</td>
+                            <td>44444</td>
+                            <td>mg@gmail.com</td>
+                            <td><a href="editarProveedor"><i class="fa-solid fa-pen-to-square fa-lg"
+                                        style="color: #ef850b;"></i></a>
+                                <div class="switch">
+                                    <input type="checkbox" class="toggleSwitch" id="toggleSwitch2">
+                                    <label class="toggleLabel" for="toggleSwitch2"></label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Julio Cortes</td>
+                            <td>Carrera 8  No. 20 - 59</td>
+                            <td>666666</td>
+                            <td>jc@gmail.com</td>
+                            <td><a href="editarProveedor"><i class="fa-solid fa-pen-to-square fa-lg"
+                                        style="color: #ef850b;"></i></a>
+                                <div class="switch">
+                                    <input type="checkbox" class="toggleSwitch" id="toggleSwitch3">
+                                    <label class="toggleLabel" for="toggleSwitch3"></label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Patricia Vergara</td>
+                            <td>Calle 15 No. 9 - 56 centro</td>
+                            <td>11111</td>
+                            <td>pv@gmail.com</td>
+                            <td><a href="editarProveedor"><i class="fa-solid fa-pen-to-square fa-lg"
+                                        style="color: #ef850b;"></i></a>
+                                <div class="switch">
+                                    <input type="checkbox" class="toggleSwitch" id="toggleSwitch4">
+                                    <label class="toggleLabel" for="toggleSwitch4"></label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Camila Paternina</td>
+                            <td>Carrera 9  No. 7 - 34</td>
+                            <td>88888</td>
+                            <td>cp@gmail.com</td>
+                            <td><a href="editarProveedor"><i class="fa-solid fa-pen-to-square fa-lg"
+                                        style="color: #ef850b;"></i></a>
+                                <div class="switch">
+                                    <input type="checkbox" class="toggleSwitch" id="toggleSwitch5">
+                                    <label class="toggleLabel" for="toggleSwitch5"></label>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!--paginado-->
+            <div class="container mt-3">
+
+                <ul class="pagination justify-content-end">
+                    <li class="page-item"><a class="page-link" href="javascript:void(0);"><i
+                                class="fa-solid fa-backward-step"></i></a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0);"><i
+                                class="fa-solid fa-forward-step"></i></a></li>
+                </ul>
+            </div>
+
+
+            <!-- footer content -->
+            <!-- /footer content -->
+        </div>
+    </div>

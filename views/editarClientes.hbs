@@ -1,0 +1,115 @@
+<a href="clientes"> <button style="border-radius: 40px; margin-left: 20%" type="button" class="btn btn-primary"><i
+            class="fa-solid fa-backward"></i>Atras</button></a>
+<div class="d-flex justify-content-center text-center">
+
+    <h1>Editar cliente</h1>
+
+    <form id="margenForm">
+        <h5 style="font-weight: bold; padding: 2%">Datos del cliente</h5>
+        <div style="padding-top: 5%;" class="d-flex justify-content-center text-center align-items: center">
+            <div class="form-group">
+                <div class="col">
+                    <label for="name">Id cliente</label>
+                    <div class="input-group">
+                        <input id="idCliente" style="border-radius: 40px" type="number" 
+                            class="form-control" >
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="name">Direccion</label>
+                    <div class="input-group">
+                        <input id="direccion" style="border-radius: 40px" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="name">Correo</label>
+                    <div class="input-group">
+                        <input id="correo" style="border-radius: 40px" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col">
+                    <label for="name">Nombre</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        </div>
+                        <input id="nombre" style="border-radius: 40px" type="text" class="form-control"
+                            placeholder="Nombre">
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="name">Telefono</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        </div>
+                        <input id="telefono" style="border-radius: 40px" type="number" class="form-control">
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="exampleFormControlSelect1">Estado</label>
+                    <select id="estado" style="border-radius: 40px" class="form-select" id="exampleFormControlSelect1">
+                        <option value="fff">Activo</option>
+                        <option>Inactivo</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        <div class="d-flex justify-content-center text-center">
+             <button style="border-radius: 40px; margin-top: 3%;" type="button" class="btn btn-primary" id="botoncito"
+                onclick="editar()"><i class="fa-solid fa-plus"></i>Registrar</button>
+            <script >
+                       
+function editar() {
+    let id_cliente = document.getElementById('idCliente').value
+    let direccion = document.getElementById('direccion').value
+    let correo = document.getElementById('correo').value
+    let nombre = document.getElementById('nombre').value
+    let telefono = document.getElementById('telefono').value
+    let estado = document.getElementById('estado').value
+
+    let expReg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+    let expRegNom = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}?$/;
+    let expRegDirec = /^[\w\d# -]+$/;
+
+
+    let verificarCorreo = expReg.test(correo)
+    let verificarNombre = expRegNom.test(nombre)
+    let verificarDirecc = expRegDirec.test(direccion)
+
+    
+
+    if (id_cliente=="" || direccion=="" || correo=="" || nombre=="" || telefono=="" || estado=="") {
+        Swal.fire('No se permiten campos vacios')
+    } else {
+        if (verificarCorreo && verificarNombre && verificarDirecc ) {
+    Swal.fire({ 
+        title: 'Estas seguro?',
+        text: "Editaras el siguiente cliente",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Aceptar!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+            icon: 'success',
+        title: 'Cliente editado con exito',
+        showConfirmButton: false,
+    })
+    setTimeout(()=>{
+        window.location.replace('/clientes');
+    },2000)
+
+        }
+    })
+    }
+} 
+}
+            </script>
+    </form>
+</div>
+</div>

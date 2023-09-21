@@ -1,0 +1,105 @@
+<a href="roles"> <button style="border-radius: 40px; margin-left: 20%" type="button" class="btn btn-primary"><i
+            class="fa-solid fa-backward"></i>Atras</button></a>
+<div class="d-flex justify-content-center text-center">
+
+    <h1>Añadir Rol</h1>
+
+    <form id="margenForm" onsubmit="registrar(event)">
+        <h5 style="font-weight: bold; padding: 2%">Datos del Rol</h5>
+        <div style="padding-top: 5%;" class="d-flex justify-content-center text-center align-items: center">
+            <div class="form-group">
+                <div class="col">
+                    <label for="name">Id rol:</label>
+                    <div class="input-group">
+                        <input style="border-radius: 40px" type="text" class="form-control" placeholder="1" value="1" id="idRol" disabled>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <label for="exampleFormControlSelect1">Usuario</label>
+                    <select id="usuario" style="border-radius: 40px" class="form-control" id="exampleFormControlSelect1">
+                        <option></option>
+                        <option>Camilo Arias</option>
+                        <option>Sandra Sanchez</option>
+                         <option>Eduardo Ortiz</option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col">
+
+                    <label for="exampleFormControlSelect1">Rol</label>
+                    <select style="border-radius: 40px" class="form-control" id="rol">
+                        <option></option>
+                        <option>Empleado</option>
+                        <option>Administrador</option>
+                        <option>Cliente</option>
+                        <option>Usuario</option>
+                    </select>
+
+                </div>
+
+                <div class="col">
+
+                    <label for="exampleFormControlSelect1">Estado</label>
+                    <select id="estado" style="border-radius: 40px" class="form-control" id="exampleFormControlSelect1">
+                        <option>Activo</option>
+                        <option>Inactivo</option>
+                    </select>
+                </div>
+
+            </div>
+
+        </div>
+        <!---PERMISOS-->
+        <h5 style="font-weight: bold; padding: 2%">Gestionar Permisos</h5>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+                Agendamiento
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+               Empleados
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+                Vehiculos
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+                Ventas
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+               Proveedores
+            </label>
+        </div>
+        <!--FIN PERMISOS-->
+
+
+
+        <div class="d-flex justify-content-center text-center">
+            <button style="border-radius: 40px" type="submit" class="btn btn-primary" id="botoncito"
+                ><i class="fa-solid fa-plus"></i>Registrar</button>
+            <script src="js/anadirRol.js"></script>
+    </form>
+</div>
+
+
+
+
+</div>

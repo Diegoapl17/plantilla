@@ -1,0 +1,101 @@
+<a href="gestionServicio"> <button style="border-radius: 40px; margin-left: 20%" type="button" class="btn btn-primary" ><i class="fa-solid fa-backward"></i>Atras</button></a>
+    <div class="d-flex justify-content-center text-center">
+   
+        <h1>Editar Servicio</h1>
+
+        <form id="margenForm">
+        <h5 style="font-weight: bold; padding: 2%">Datos del servicio</h5>
+        <div style="padding-top: 5%;" class="d-flex justify-content-center text-center align-items: center">
+            <div class="form-group">
+                <div class="col">
+                    <label for="name">Id servicio</label>
+                    <div class="input-group">
+                        <input id="idServicio" style="border-radius: 40px" type="text" value="1"  placeholder="1"  class="form-control" disabled >
+                    </div>
+                </div>
+                 
+                <div class="col">
+                    <label for="exampleFormControlSelect1">Categoria</label>
+                    <select id="categoria" style="border-radius: 40px" class="form-select" id="exampleFormControlSelect1" >
+                        <option></option>
+                        <option id="nn" value="fff">Preventivo</option>
+                        <option id="nn">Correctivo</option>
+                    </select>
+                </div>   
+            </div>
+
+            <div class="form-group">
+                <div class="col">
+                    <label for="name">Nombre</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        </div>
+                        <input style="border-radius: 40px" type="text" id="nombre" class="form-control" placeholder="">
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="exampleFormControlSelect1">Estado</label>
+                    <select id="estado" style="border-radius: 40px" class="form-select" id="exampleFormControlSelect1" >
+                        <option></option>
+                        <option id="nn" value="fff">Activo</option>
+                        <option id="nn">Inactivo</option>
+                    </select>
+                </div>
+                
+            </div>
+
+        </div>
+<div class="d-flex justify-content-center text-center">
+    <button style="border-radius: 40px; margin-top: 3%;" type="button" class="btn btn-primary" id="botoncito" onclick="editar()"><i class="fa-solid fa-plus"></i>Registrar</button>
+<script> 
+    function editar() {
+    let idServicio = document.getElementById("idServicio").value;
+    let categoria = document.getElementById("categoria").value;
+    let estado = document.getElementById("estado").value;
+    let nombre = document.getElementById("nombre").value;
+  
+
+  let expRegNom = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}?$/;
+
+  let verificarNombreP = expRegNom.test(nombre); 
+     if (
+    idServicio == "" ||
+    categoria == ""||
+    estado == "" ||
+    nombre == "" 
+    
+  ) {
+    Swal.fire("No se permiten campos vacios");
+  } else {
+    if (verificarNombreP) {
+    Swal.fire({ 
+        title: 'Estas seguro?',
+        text: "Editaras el siguiente servicio",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Aceptar!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+            icon: 'success',
+        title: 'Servicio editado con exito',
+        showConfirmButton: false,
+    })
+    setTimeout(()=>{
+        window.location.replace('/gestionServicio');
+    },2000)
+
+        }
+    })
+    }
+} 
+}
+</script>
+    </form>
+    </div>
+
+
+   
+</div>

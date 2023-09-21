@@ -1,0 +1,154 @@
+<!-- /top navigation -->
+
+<!-- head -->
+<div class="right_col" role="main">
+
+  <div class="row" style="display: inline-block;">
+
+    <h1>Vehiculos</h1>
+    <div class="tile_count">
+
+      <!--APARTADO DE AÑADIR FLECHA-
+            <i class="fa-solid fa-backward"></i> -->
+
+
+
+    </div>
+  </div>
+  <!--search-->
+  <div>
+
+    <div class="contenedorBarras">
+      <form class="d-flex">
+        <div class="bbuscar">
+          <nav class="navbar navbar-light bg-light">
+            <form class="container-fluid">
+              <div class="input-group">
+                <span style="border-radius: 40px;  background-color: white" class="input-group-text"
+                  id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i>
+                  <input style="border-radius: 40px; border: none;" type="text" class="form-control "
+                    placeholder="Buscar" aria-label="Nombre de usuario" aria-describedby="basic-addon1"></span>
+              </div>
+            </form>
+          </nav>
+        </div>
+        <!--Boton añadir rol-->
+        <div class="bañadir"><a href="anadirVehiculos"><button class="btn btn-primary" style="border-radius: 40px" class="boton" 
+              style="color:white"><i class="fa-solid fa-plus"></i>Añadir vehiculos</button></a>
+        </div>
+      </form>
+    </div>
+
+    <!-- tabla -->
+
+    <div class="row">
+      <div class="container mt-3">
+
+
+
+        <table class="table table-striped" style="font-size: 17px">
+          <thead>
+            <tr>
+              <th>Placa</th>
+              <th>Referencia</th>
+              <th>Modelo</th>
+              <th>Chasis</th>
+              <th>Color</th>
+              <th>Cliente</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>QCE33G</td>
+              <td>Tvs Raider 125</td>
+              <td>2023</td>
+              <td>AUSDA123</td>
+              <td>Negro</td>
+              <td>Marcos Lopez</td>
+              <td><a href="editarVehiculos"><i class="fa-solid fa-pen-to-square fa-lg" style="color: #ef850b;"></i></a>
+                <div class="switch">
+                  <input type="checkbox" class="toggleSwitch" id="toggleSwitch1">
+                  <label class="toggleLabel" for="toggleSwitch1"></label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>AMG20F</td>
+              <td>AKT CR4 125</td>
+              <td>2022</td>
+              <td>ASDAJKS1223</td>
+              <td>Rojo</td>
+              <td>Julio Cortes</td>
+              <td><a href="editarVehiculos"><i class="fa-solid fa-pen-to-square fa-lg" style="color: #ef850b;"></i></a>
+                <div class="switch">
+                  <input type="checkbox" class="toggleSwitch" id="toggleSwitch2">
+                  <label class="toggleLabel" for="toggleSwitch2"></label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>UZI20A</td>
+              <td>Yamaha DT175</td>
+              <td>1990</td>
+              <td>ASDOA33</td>
+              <td>Azul</td>
+              <td>Manuela Gomez</td>
+              <td><a href="editarVehiculos"><i class="fa-solid fa-pen-to-square fa-lg" style="color: #ef850b;"></i></a>
+                <div class="switch">
+                  <input type="checkbox" class="toggleSwitch" id="toggleSwitch3">
+                  <label class="toggleLabel" for="toggleSwitch3"></label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>OLP19E</td>
+              <td>Kawasaki Z1000</td>
+              <td>2021</td>
+              <td>JKDJDDAKL00</td>
+              <td>Verde</td>
+              <td>Patricia Vergara</td>
+              <td><a href="editarVehiculos"><i class="fa-solid fa-pen-to-square fa-lg" style="color: #ef850b;"></i></a>
+                <div class="switch">
+                  <input type="checkbox" class="toggleSwitch" id="toggleSwitch4">
+                  <label class="toggleLabel" for="toggleSwitch4"></label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>UZI95F</td>
+              <td>Honda CB125F</td>
+              <td>2022</td>
+              <td>NPAOSDLAO</td>
+              <td>Negro</td>
+              <td>Camila Paternina</td>
+              <td><a href="editarVehiculos"><i class="fa-solid fa-pen-to-square fa-lg" style="color: #ef850b;"></i></a>
+                <div class="switch">
+                  <input type="checkbox" class="toggleSwitch" id="toggleSwitch5">
+                  <label class="toggleLabel" for="toggleSwitch5"></label>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!--paginado-->
+      <div class="container mt-3">
+
+        <ul class="pagination justify-content-end">
+          <li class="page-item"><a class="page-link" href="javascript:void(0);"><i
+                class="fa-solid fa-backward-step"></i></a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item active"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="javascript:void(0);"><i
+                class="fa-solid fa-forward-step"></i></a></li>
+        </ul>
+      </div>
+
+
+      <!-- footer content -->
+      <!-- /footer content -->
+    </div>
+  </div>

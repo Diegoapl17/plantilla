@@ -1,0 +1,135 @@
+<a href="vehiculos"> <button style="border-radius: 40px; margin-left: 20%" type="button" class="btn btn-primary"><i
+            class="fa-solid fa-backward"></i>Atras</button></a>
+<div class="d-flex justify-content-center text-center">
+
+    <h1>Editar Vehiculo</h1>
+
+    <form id="margenForm" onsubmit="editar(event)">
+        <h5 style="font-weight: bold; padding: 2%">Datos del vehiculo</h5>
+        <div style="padding-top: 5%;" class="d-flex justify-content-center text-center align-items: center">
+            <div class="form-group">
+                <div class="col">
+                    <label for="name">Placa</label>
+                    <div class="input-group">
+                        <input id="placa" style="border-radius: 40px" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="name">Referencia</label>
+                    <div class="input-group">
+                        <input id="referencia" style="border-radius: 40px" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="name">Modelo</label>
+                    <div class="input-group">
+                        <input id="modelo" style="border-radius: 40px" type="number" class="form-control">
+                    </div>
+                </div>
+                <!--ESTADO VEHICULO-->
+                <!--- <div class="col">
+                    <label for="exampleFormControlSelect1">Estado</label>
+                    <select style="border-radius: 40px" class="form-select" id="exampleFormControlSelect1" >
+                        <option id="nn" value="fff">Activo</option>
+                        <option id="nn">Inactivo</option>
+                    </select>
+                </div> -->
+            </div>
+
+            <div class="form-group">
+                <div class="col">
+                    <label for="name">Chasis</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        </div>
+                        <input id="chasis" style="border-radius: 40px" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="name">Color</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        </div>
+                        <input id="color" style="border-radius: 40px" type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <label for="exampleFormControlSelect1">Cliente</label>
+                    <select id="cliente" style="border-radius: 40px" class="form-select" id="exampleFormControlSelect1">
+                        <option></option>
+                        <option>Marcos Lopez</option>
+                        <option>Julio Cortes</option>
+                        <option>Manuela Gomez</option>
+                    </select>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="d-flex justify-content-center text-center">
+            <button style="border-radius: 40px; margin-top: 3%;" type="submit" class="btn btn-primary" id="botoncito"><i
+                    class="fa-solid fa-pen"></i>Editar</button>
+            <script>
+                function editar(event) {
+                    event.preventDefault();
+                    let placa = document.getElementById('placa').value
+                    let referencia = document.getElementById('referencia').value
+                    let modelo = document.getElementById('modelo').value
+                    let chasis = document.getElementById('chasis').value
+                    let color = document.getElementById('color').value
+                    let cliente = document.getElementById('cliente').value
+
+
+                    let expPlaca = /^[a-zA-Z0-9\s]+$/
+                    let expReferencia = /^[a-zA-Z0-9\s]+$/
+                    let expChasis = /^[a-zA-Z0-9\s]+$/
+                    let expColor = /^[a-zA-Z0-9\s]+$/
+
+
+
+                    let verificarPlaca = expPlaca.test(placa)
+                    let verificarReferencia = expReferencia.test(referencia)
+                    let verificarChasis = expChasis.test(chasis)
+                    let verificarColor = expColor.test(color)
+
+                    if (placa == "" || referencia == "" || modelo == "" || chasis == "" || color == "" || cliente == "") {
+                        Swal.fire('No se permiten campos vacios')
+                    } else {
+                        if (verificarPlaca && verificarReferencia && verificarChasis && verificarColor) {
+                           Swal.fire({
+                            title: 'Estas seguro?',
+                            text: "Editaras el siguiente vehiculo",
+                            icon: 'warning',
+                            showCancelButton: true,
+                            confirmButtonColor: '#3085d6',
+                            cancelButtonColor: '#d33',
+                            confirmButtonText: 'Aceptar'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Vehiculo editado con exito',
+                                    showConfirmButton: false,
+                                })
+                                setTimeout(() => {
+                                    window.location.replace('/vehiculos');
+                                }, 2000)
+
+                            }
+                        })
+
+
+                        } else {
+                            Swal.fire('No se permiten caracteres especiales')
+                        }
+                    }
+                }  
+            </script>
+    </form>
+</div>
+
+
+
+
+</div>
