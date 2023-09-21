@@ -1,6 +1,7 @@
 <!-- /Usuariosavigation -->
 
 <!-- head -->
+<body onload="listarDatos()">
 <div class="right_col" role="main">
 
     <div class="row" style="display: inline-block;">
@@ -18,17 +19,21 @@
     <!--search-->
     <div>
 
+        
+        
+
+
+
         <div class="contenedorBarras">
             <form class="d-flex">
-                <div class="bbuscar">
+                <div class="buscar">
                     <nav class="navbar navbar-light bg-light">
                         <form class="container-fluid">
                             <div class="input-group">
                                 <span style="border-radius: 40px;  background-color: white" class="input-group-text"
                                     id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i>
-                                    <input style="border-radius: 40px; border: none;" type="text" class="form-control "
-                                        placeholder="Buscar" aria-label="Nombre de usuario"
-                                        aria-describedby="basic-addon1"></span>
+                                    <input onkeyup="Buscador()"id="inputBusqueda"style="border-radius: 40px; border: none;" type="text" class="form-control "
+                                        placeholder="Buscar"  aria-describedby="basic-addon1"></span>
                             </div>
                         </form>
                     </nav>
@@ -48,10 +53,10 @@
 
 
 
-                <table class="table table-striped" style="font-size: 17px">
+                <table id="miTabla" class="table table-striped" style="font-size: 16px">
                     <thead>
                         <tr>
-                            <th>Id usuario</th>
+                            <th>Documento</th>
                             <th>Nombre </th>
                             <th>Direccion</th>
                             <th>Telefono</th>
@@ -60,86 +65,11 @@
                             <th>Acciones</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Emanuel Zapata</td>
-                            <td>Calle 77C# 91-20 INT 201</td>
-                            <td>305048939</td>
-                            <td>ema@gmail.com</td>
-                            <td>Cliente</td>
-                            <td><a href="editarUsuarios"><i class="fa-solid fa-pen-to-square fa-lg"
-                                        style="color: #ef850b;"></i></a>
-                                <div class="switch">
-                                    <input type="checkbox" class="toggleSwitch" id="toggleSwitch1">
-                                    <label class="toggleLabel" for="toggleSwitch1"></label>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Sandra Orozco</td>
-                            <td>Cra 22A 33-02</td>
-                            <td>2602899</td>
-                            <td>sro@gmail.com</td>
-                            <td>Cliente</td>
-                            <td><a href="editarUsuarios"><i class="fa-solid fa-pen-to-square fa-lg"
-                                        style="color: #ef850b;"></i></a>
-                                <div class="switch">
-                                    <input type="checkbox" class="toggleSwitch" id="toggleSwitch2">
-                                    <label class="toggleLabel" for="toggleSwitch2"></label>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Camilo Velazques</td>
-                            <td>Avenida 80 #91-22</td>
-                            <td>3050999929</td>
-                            <td>cm@gmail.com</td>
-                            <td>Cliente</td>
-                            <td><a href="editarUsuarios"><i class="fa-solid fa-pen-to-square fa-lg"
-                                        style="color: #ef850b;"></i></a>
-                                <div class="switch">
-                                    <input type="checkbox" class="toggleSwitch" id="toggleSwitch3">
-                                    <label class="toggleLabel" for="toggleSwitch3"></label>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Santiago Sanchez A</td>
-                            <td>No aplica</td>
-                            <td>3048034033</td>
-                            <td>sza@gmail.com</td>
-                            <td>Cliente</td>
-                            <td><a href="editarUsuarios"><i class="fa-solid fa-pen-to-square fa-lg"
-                                        style="color: #ef850b;"></i></a>
-                                <div class="switch">
-                                    <input type="checkbox" class="toggleSwitch" id="toggleSwitch4">
-                                    <label class="toggleLabel" for="toggleSwitch4"></label>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>laura Duque</td>
-                            <td>Calle 33B #22A-05</td>
-                            <td>324302933</td>
-                            <td>ld@hotmail.com</td>
-                            <td>Cliente</td>
-                            <td><a href="editarUsuarios"><i class="fa-solid fa-pen-to-square fa-lg"
-                                        style="color: #ef850b;"></i></a>
-                                <div class="switch">
-                                    <input type="checkbox" class="toggleSwitch" id="toggleSwitch5">
-                                    <label class="toggleLabel" for="toggleSwitch5"></label>
-                                </div>
-                            </td>
-                        </tr>
+                    <tbody id="contenido">
+                        
                     </tbody>
                 </table>
             </div>
-
             <!--paginado-->
             <div class="container mt-3">
 
@@ -159,3 +89,7 @@
             <!-- /footer content -->
         </div>
     </div>
+    <script src="js/anadirUsuario.js"></script>
+    <script></script>
+</body>
+    

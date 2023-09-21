@@ -4,14 +4,14 @@
 
     <h1>Añadir Usuario</h1>
 
-    <form id="margenForm" onsubmit="registrar(event)">
+    <form id="margenForm">
         <h5 style="font-weight: bold; padding: 2%">Datos del usuario</h5>
         <div style="padding-top: 5%;" class="d-flex justify-content-center text-center align-items: center">
             <div class="form-group">
                 <div class="col">
-                    <label for="name">Id Usuario</label>
+                    <label for="name">Documento</label>
                     <div class="input-group">
-                        <input style="border-radius: 40px" type="text" placeholder="1" class="form-control" disabled>
+                        <input id="documento" style="border-radius: 40px" type="text"class="form-control" >
                     </div>
                 </div>
                 <div class="col">
@@ -28,14 +28,17 @@
                 </div>
             </div>
 
+            
+
             <div class="form-group">
+                
                 <div class="col">
                     <label for="name">Nombre</label>
                     <div class="input-group">
                         <div class="input-group-prepend">
                         </div>
                         <input id="nombre" style="border-radius: 40px" type="text" class="form-control"
-                            placeholder="">
+                        >
                     </div>
                 </div>
                 <div class="col">
@@ -43,22 +46,31 @@
                     <div class="input-group">
                         <div class="input-group-prepend">
                         </div>
-                        <input id="telefono" style="border-radius: 40px" type="number" class="form-control"
-                            placeholder="">
+                        <input id="telefono" style="border-radius: 40px" type="number" class="form-control">
                     </div>
                 </div>
                 <div class="col">
                     <label for="exampleFormControlSelect1">Rol</label>
-                    <select style="border-radius: 40px" class="form-select" id="exampleFormControlSelect1">
-                        <option id="nn" value="fff">Cliente</option>
-                        <option id="nn">Administrador</option>
+                    <select style="border-radius: 40px" class="form-select" id="rol">
+                        <option value="6508716fcac526cc61bfe45e">Administrador</option>
+                        <option>Cliente</option>
                     </select>
                 </div>
+
+                 <div class="col">
+                    <label for="exampleFormControlSelect1">Estado</label>
+                    <select style="border-radius: 40px" class="form-select" id="estado">
+                        <option value="true">Activo</option>
+                        <option value="false">Inactivo</option>
+                    </select>
+                </div>
+
             </div>
+            
 
         </div>
         <div class="d-flex justify-content-center text-center">
-            <button style="border-radius: 40px; margin-top: 3%;" type="submit" class="btn btn-primary" id="botoncito"
+            <button style="border-radius: 40px; margin-top: 3%;" type="button" class="btn btn-primary" id="botoncito"
                 ><i class="fa-solid fa-plus"></i>Registrar</button>
             <script src="js/anadirUsuario.js"></script>
 

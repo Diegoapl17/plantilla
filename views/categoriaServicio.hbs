@@ -1,3 +1,5 @@
+<body onload="listarDatos()"> 
+
 <!-- /top navigation -->
 
 <!-- head -->
@@ -55,41 +57,8 @@
               <th>Acciones</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Preventivo</td>
-              <td>Prevencion de fallos</td>
-              <td><a href="editarCategoria"><i class="fa-solid fa-pen-to-square fa-lg" style="color: #ef850b;"></i></a>
-                <div class="switch">
-                  <input type="checkbox" class="toggleSwitch" id="toggleSwitch1">
-                  <label class="toggleLabel" for="toggleSwitch1"></label>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Correctivo</td>
-              <td>Reparacion de fallos</td>
-              <td><a href="editarCategoria"><i class="fa-solid fa-pen-to-square fa-lg" style="color: #ef850b;"></i></a>
-                <div class="switch">
-                  <input type="checkbox" class="toggleSwitch" id="toggleSwitch2">
-                  <label class="toggleLabel" for="toggleSwitch2"></label>
-                </div>
-              </td>
-            </tr>
-           
-           <tr>
-              <td>3</td>
-              <td>Electrico</td>
-              <td>Reparacion de fallas electricas</td>
-              <td><a href="editarCategoria"><i class="fa-solid fa-pen-to-square fa-lg" style="color: #ef850b;"></i></a>
-                <div class="switch">
-                  <input type="checkbox" class="toggleSwitch" id="toggleSwitch3">
-                  <label class="toggleLabel" for="toggleSwitch3"></label>
-                </div>
-              </td>
-            </tr>
+          <tbody id="contenido">
+            
           </tbody>
         </table>
       </div>
@@ -116,3 +85,6 @@
       <!-- /footer content -->
     </div>
   </div>
+
+  <script src="js/añadirCategoria.js"></script>
+  </body>

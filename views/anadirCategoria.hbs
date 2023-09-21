@@ -7,28 +7,39 @@
         <div style="padding-top: 5%;" class="d-flex justify-content-center text-center align-items: center">
             <div class="form-group">
                 <div class="col">
-                    <label for="name">Id servicio</label>
+                    <label for="name">Id categoria </label>
                     <div class="input-group">
-                        <input style="border-radius: 40px" type="text" value="1" id="idServicio" placeholder="1" class="form-control" disabled >
+                        <div class="input-group-prepend">
+                        </div>
+                        <input style="border-radius: 40px" type="number" class="form-control" id="id" >
                     </div>
                 </div>
                  
                 <div class="col">
                     <label for="exampleFormControlSelect1">Estado</label>
                     <select  id="estado" style="border-radius: 40px" class="form-select" id="exampleFormControlSelect1" >
-                        <option id="nn" value="fff">Activo</option>
-                        <option id="nn">Inactivo</option>
+                        <option value="true" >Activo</option>
+                        <option value="false">Inactivo</option>
                     </select>
                 </div> 
             </div>
 
             <div class="form-group">
                 <div class="col">
-                    <label for="name">Nombre categoria</label>
+                    <label for="name">Nombre </label>
                     <div class="input-group">
                         <div class="input-group-prepend">
                         </div>
                         <input style="border-radius: 40px" type="text" class="form-control" id="nombre" placeholder="">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <label for="name">Descripcion</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        </div>
+                        <input style="border-radius: 40px" type="text" class="form-control" id="descripcion" placeholder="">
                     </div>
                 </div>
                 

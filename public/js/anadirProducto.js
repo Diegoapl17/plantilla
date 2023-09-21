@@ -1,5 +1,42 @@
 const url = 'https://api-productos3.onrender.com/api/producto'
 
+let paginaActual = 1
+const elementosPagina =8
+
+const Buscador = () => {
+  // Obtén una referencia al input de búsqueda y a la tabla
+  const inputBusqueda = document.getElementById("inputBusqueda");
+  const tabla = document.getElementById("tabla");
+  const filas = tabla.getElementsByTagName("tr");888
+
+  const terminoBusqueda = inputBusqueda.value.toLowerCase();
+
+  // Itera a través de las filas de la tabla
+  for (let i = 1; i < filas.length; i++) {
+    const fila = filas[i];
+    const celdas = fila.getElementsByTagName("td");
+    let coincide = false;
+
+    // Itera a través de las celdas de la fila actual
+    for (let j = 0; j < celdas.length; j++) {
+      const textoCelda = celdas[j].textContent.toLowerCase();
+
+      // Comprueba si el texto de la celda coincide con el término de búsqueda
+      if (textoCelda.includes(terminoBusqueda)) {
+        coincide = true;
+      }
+    }
+
+    // Muestra u oculta la fila según si coincide o no
+    if (coincide) {
+      fila.style.display = "";
+    } else {
+      fila.style.display = "none";
+    }
+  }
+}
+
+
 const registrar = async () => {
 
   let _idProducto = document.getElementById("id_producto").value;
@@ -87,7 +124,7 @@ const listarDatos = async () => {
 
       let listaProdutos = data.productos //Capturar el array devuelto por la api
       datos =
-        listaProdutos.map(function (producto) {//Recorrer el array
+          listaProdutos.map(function (producto) {//Recorrer el array
           var chequeado = ""
           if(producto.estado == "true"){
             chequeado = "checked"
@@ -103,7 +140,7 @@ const listarDatos = async () => {
             <a href="editarProductos" class="editar" onclick="listarP('${producto.idProducto}')">
               <i class="fa-solid fa-pen-to-square fa-lg" id="${producto.idProducto}" style="color: #ef850b; "></i>
             </a>
-            <div>
+            <div >
               <input type="checkbox"   onclick="cambiarEstado(this)"  id="${producto.idProducto}" 
               ${chequeado}
               >
@@ -114,6 +151,7 @@ const listarDatos = async () => {
           body.innerHTML = respuesta
           contador++;
         })
+
 
       if (contador === data.productos.length) {
         const newButton = document.querySelectorAll('.editar')
@@ -133,16 +171,12 @@ const listarDatos = async () => {
       }
     })
 }
-
+8
 
 async function cambiarEstado(input) {
-
-  
-
   let producto = {
     idProducto:   input.id,
     estado: input.checked
-    
   }
   
   try {
@@ -162,66 +196,35 @@ async function cambiarEstado(input) {
 }
 
 const listarP = (idProducto) => {
-  const url = 'https://api-productos3.onrender.com/api/producto'
+  
 
 console.log(idProducto)
   const datosProductoRecuperado = JSON.parse(localStorage.getItem("datosProducto"));
   // alert(datosProductoRecuperado.idProducto);
-  document.getElementById("id_producto").value = datosProductoRecuperado.idProducto;
-  document.getElementById("precio_compra").value = datosProductoRecuperado.precioCompra;
-  document.getElementById("cantidad").value = datosProductoRecuperado.cantidad;
-  document.getElementById("nombre_producto").value = datosProductoRecuperado.nombre;
-  document.getElementById("estado").value = datosProductoRecuperado.estado;
-  document.getElementById("precio_venta").value = datosProductoRecuperado.precioVenta;
-  document.getElementById("stockMinimo").value = datosProductoRecuperado.stockMinimo;
-  document.getElementById("stockMaximo").value = datosProductoRecuperado.stockMaximo;
-
+  document.getElementById("_id_producto").value = datosProductoRecuperado.idProducto;
+  document.getElementById("_precio_compra").value = datosProductoRecuperado.precioCompra;
+  document.getElementById("_cantidad").value = datosProductoRecuperado.cantidad;
+  document.getElementById("_nombre_producto").value = datosProductoRecuperado.nombre;
+  document.getElementById("_estado").value = datosProductoRecuperado.estado;
+  document.getElementById("_precio_venta").value = datosProductoRecuperado.precioVenta;
+  document.getElementById("_stockMinimo").value = datosProductoRecuperado.stockMinimo;
+  document.getElementById("_stockMaximo").value = datosProductoRecuperado.stockMaximo;
 
   localStorage.removeItem("datosProductos")
-
-  // fetch(url, {
-  //   method: 'GET',
-  //   mode: 'cors',
-  //   headers: { "Content-type": "application/json; charset=UTF-8" }
-  // })
-  //   .then((resp) => resp.json()) //Obtener la respuesta y convertirla a json
-  //   .then(function (data) {
-  //     let produto1 = data.productos
-  //     datos =
-  //       produto1.map(function (producto) {//Recorrer el array
-  //         for (let index = 0; index < producto.idProducto.length; index++) {
-  //           alert(producto.idProducto)
-  //           if (llamarID == producto.idProducto) {
-  //             document.getElementById("id_producto").value = producto.idProducto
-  //             document.getElementById("precio_compra").value = producto.precioCompra
-  //             document.getElementById("cantidad").value = producto.cantidad
-  //             document.getElementById("estado").value = producto.estado
-  //             document.getElementById("nombre_producto").value = producto.nombre
-  //             document.getElementById("precio_venta").value = producto.precioVenta
-  //             document.getElementById("stockMinimo").value = producto.stockMinimo
-  //             document.getElementById("stockMaximo").value = producto.stockMaximo
-  //             break;
-  //           }
-  //         }
-  //       })
-  //   })
-
-  //   alert('hola'+ producto.nombre)
-
 
 }
 
 
 const actualizar = async () => {
 
-  let _idProducto = document.getElementById("id_producto").value;
-  let _precio_compra = document.getElementById("precio_compra").value;
-  let _cantidad = document.getElementById("cantidad").value;
-  let _estado = document.getElementById("estado").value;
-  let _nombre_producto = document.getElementById("nombre_producto").value;
-  let _precio_venta = document.getElementById("precio_venta").value;
-  let _stockMinimo = document.getElementById("stockMinimo").value;
-  let _stockMaximo = document.getElementById("stockMaximo").value;
+  let _idProducto = document.getElementById("_id_producto").value;
+  let _precio_compra = document.getElementById("_precio_compra").value;
+  let _cantidad = document.getElementById("_cantidad").value;
+  let _estado = document.getElementById("_estado").value;
+  let _nombre_producto = document.getElementById("_nombre_producto").value;
+  let _precio_venta = document.getElementById("_precio_venta").value;
+  let _stockMinimo = document.getElementById("_stockMinimo").value;
+  let _stockMaximo = document.getElementById("_stockMaximo").value;
 
   let expRegNom = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}?$/;
 
