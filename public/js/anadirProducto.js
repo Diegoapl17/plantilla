@@ -88,7 +88,10 @@ const listarDatos = async () => {
       let listaProdutos = data.productos //Capturar el array devuelto por la api
       datos =
         listaProdutos.map(function (producto) {//Recorrer el array
-
+          var chequeado = ""
+          if(producto.estado == "true"){
+            chequeado = "checked"
+          }
           respuesta += `<tr><td>${producto.idProducto}</td>` +
             `<td>${producto.nombre}</td>` +
             `<td>${producto.precioCompra}</td>` +
@@ -100,9 +103,11 @@ const listarDatos = async () => {
             <a href="editarProductos" class="editar" onclick="listarP('${producto.idProducto}')">
               <i class="fa-solid fa-pen-to-square fa-lg" id="${producto.idProducto}" style="color: #ef850b; "></i>
             </a>
-            <div class="switch" style="margin-top: -9px">
-              <input type="checkbox" class="toggleSwitch" id="${producto.idProducto}">
-              <label class="toggleLabel" for="${producto.idProducto}"></label>
+            <div>
+              <input type="checkbox"   onclick="cambiarEstado(this)"  id="${producto.idProducto}" 
+              ${chequeado}
+              >
+              <label class="toggleLabel" ></label>
             </div>
           </td>`+
             `</tr>`
@@ -129,10 +134,37 @@ const listarDatos = async () => {
     })
 }
 
-const listarP = () => {
+
+async function cambiarEstado(input) {
+
+  
+
+  let producto = {
+    idProducto:   input.id,
+    estado: input.checked
+    
+  }
+  
+  try {
+    const response = await fetch(url, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json; charset=UTF-8',},
+      body: JSON.stringify(producto),
+    } );
+    if (response.ok) {
+      console.log('EStado actualizado')
+    } else {
+      console.log('Error al actualizar')
+    }
+  } catch (error) {
+    console.error('Error en la solicitud:' , error)
+  }
+}
+
+const listarP = (idProducto) => {
   const url = 'https://api-productos3.onrender.com/api/producto'
 
-
+console.log(idProducto)
   const datosProductoRecuperado = JSON.parse(localStorage.getItem("datosProducto"));
   // alert(datosProductoRecuperado.idProducto);
   document.getElementById("id_producto").value = datosProductoRecuperado.idProducto;
@@ -235,9 +267,9 @@ const actualizar = async () => {
             showConfirmButton: false,
           })
 
-          // setTimeout(() => {
-          //   window.location.replace("/productos");
-          // }, 20066660);
+          setTimeout(() => {
+            window.location.replace("/productos");
+          }, 2000);
         })
     } else {
       Swal.fire("No se permiten caracteres especiales");
@@ -245,6 +277,9 @@ const actualizar = async () => {
 
   }
 }
+
+
+
 
 if (document.querySelector('#btnRegistrar')) {
   document.querySelector('#btnRegistrar')
