@@ -12,15 +12,14 @@ function registrar(event) {
     let expReferencia = /^[a-zA-Z0-9\s]+$/
     let expChasis = /^[a-zA-Z0-9\s]+$/
     let expColor = /^[a-zA-Z0-9\s]+$/
-
-
-
+    
     let verificarPlaca = expPlaca.test(placa)
     let verificarReferencia = expReferencia.test(referencia)
     let verificarChasis = expChasis.test(chasis)
     let verificarColor = expColor.test(color)
 
     if (placa == "" || referencia == "" || modelo == "" || chasis == "" || color == "" || cliente == "") {
+        
         Swal.fire('No se permiten campos vacios')
     } else {
         if (verificarPlaca && verificarReferencia && verificarChasis && verificarColor) {

@@ -47,11 +47,20 @@ app.listen(port,()=>{
 
 
 //La pagina que por defecto se cargará 
+app.get('/index',(req,res)=>{
+    //ENVIO DE PAGINAS POR MEDIO DE .HTML 
+    //res.sendFile(__dirname+'/public/home.hbs')
+    res.render('index', {
+        titulo:'indexC'
+    })
+    
+})
+//La pagina que por defecto se cargará 
 app.get('/',(req,res)=>{
     //ENVIO DE PAGINAS POR MEDIO DE .HTML 
     //res.sendFile(__dirname+'/public/home.hbs')
     res.render('index', {
-        titulo:'index'
+        titulo:'indexC'
     })
     
 })
