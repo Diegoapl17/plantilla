@@ -1527,8 +1527,15 @@ body {
 /*Boton de añadir */
 .bañadir{
   padding-top: 1%;
-  padding-left: 50%;
+  padding-left: 49%;
 }
+
+.bañadirP{
+  padding-top: 1%;
+  padding-left: 3%;
+
+}
+
 .contenedorBarras{
   display: flex;
   margin-top: 6%;
