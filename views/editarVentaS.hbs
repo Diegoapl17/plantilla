@@ -1,12 +1,12 @@
-<a href="gestionVentas"> <button style="border-radius: 40px; margin-left: 20%" type="button" class="btn btn-primary"><i
+<a href="ventaServicios"> <button style="border-radius: 40px; margin-left: 20%" type="button" class="btn btn-primary"><i
             class="fa-solid fa-backward"></i>Atrás</button></a>
 <div class="d-flex justify-content-center text-center">
 
-    <h1>Añadir venta</h1>
+    <h1>Editar venta </h1>
 
     <form>
 
-        <div>
+         <div>
             <div style="padding-top: 7%;" class="d-inline-block ">
                 <h5 style="font-weight: bold;">Datos del la venta</h5>
 
@@ -20,40 +20,32 @@
                             </div>
                         </div>
                         <div class="col">
-                            <label for="exampleFormControlSelect1">Cliente</label>
-                            <select id="cliente" style="border-radius: 40px" class="form-select"
-                                id="exampleFormControlSelect1">
-                                <option></option>
-                                <option id="nn" value="fff">Andres</option>
-                                <option id="nn">Raul</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div style="display: flex; justify-content: space-between; align-items: center">
-                        <div class="col">
                             <label for="name">Fecha y hora</label>
                             <div>
                                 <input style="border-radius: 40px" type="text" class="form-control" value="22/08/11"
                                     id="fecha" placeholder="22/08/11" disabled>
                             </div>
                         </div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center">
+                        
                         <div class="col">
-                            <label for="name">Forma de pago</label>
+                            <label for="name">Metodo de pago</label>
                             <div>
                                 <input style="border-radius: 40px" id="pago" type="text" class="form-control"
                                     placeholder="">
                             </div>
                         </div>
                         <div class="col">
-                            <label for="name">Costo mano de obra</label>
+                            <label for="name">Valor mano obra</label>
                             <div>
                                 <input style="border-radius: 40px" type="number" id="costoManoObra" class="form-control"
                                     placeholder="">
                             </div>
                         </div>
                         <div class="col">
-                            <label for="name">Valor mano obra</label>
+                            <label for="name">Costo insumos</label>
                             <div>
                                 <input style="border-radius: 40px" type="number" id="valorManoObra" class="form-control"
                                     placeholder="">
@@ -67,7 +59,7 @@
 
                 <div id="margenForm2" style="margin-top: 4%;">
                     <div class="col">
-                        <label for="exampleFormControlSelect1">Id producto</label>
+                        <label for="exampleFormControlSelect1">Id cotización</label>
                         <select id="idProducto" style="border-radius: 40px" class="form-select"
                             id="exampleFormControlSelect1">
                             <option></option>
@@ -77,39 +69,15 @@
                         </select>
                     </div>
                     <div class="col">
-                        <label for="name">Precio compra</label>
-                        <div>
-                            <input style="border-radius: 40px" type="number" id="precioCompra" class="form-control"
-                                placeholder="">
-                        </div>
+                        <label for="exampleFormControlSelect1">Id cliente</label>
+                        <select id="idProducto" style="border-radius: 40px" class="form-select"
+                            id="exampleFormControlSelect1">
+                            <option></option>
+                            <option id="nn" value="fff">1</option>
+                            <option id="nn">2</option>
+                            <option id="nn">3</option>
+                        </select>
                     </div>
-                    <div class="col">
-                        <label for="name">Precio venta</label>
-                        <div>
-                            <input style="border-radius: 40px" type="number" id="precioVenta" class="form-control"
-                                placeholder="">
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <label for="name">Cantidad producto</label>
-                        <div>
-                            <input style="border-radius: 40px" type="number" id="cantidadProducto" class="form-control"
-                                placeholder="">
-                        </div>
-                    </div>
-
-
-
-                    <div class="col">
-                        <label for="name">Total</label>
-                        <div>
-                            <input style="border-radius: 40px" type="text" id="number" class="form-control">
-                        </div>
-                    </div>
-
-
-
                 </div>
 
             </div>
@@ -117,9 +85,33 @@
 
 
         <div class="d-flex justify-content-center text-center">
-            <button style="border-radius: 40px; margin-top: 3%;" type="button" class="btn btn-primary" id="botoncito"
-                onclick="registrar()"><i class="fa-solid fa-plus"></i>Registrar</button>
-            <script src="js/añadirVentas.js"> </script>
+            <button style="border-radius: 40px; margin-top:3% " type="button" class="btn btn-primary" id="botoncito"
+                onclick="editar()"><i class="fa-solid fa-pen"></i>Editar</button>
+            <script>
+                function editar() {
+                    Swal.fire({ 
+                        title: 'Estas seguro?',
+                        text: "Editaras la siguiente venta",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Aceptar!'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            Swal.fire({
+                            icon: 'success',
+                        title: 'Servicio registrado con exito',
+                        showConfirmButton: false,
+                    })
+                    setTimeout(()=>{
+                        window.location.replace('/ventaServicios');
+                    },2000)
+        
+                        }
+                    })
+                } 
+            </script>
     </form>
 </div>
 

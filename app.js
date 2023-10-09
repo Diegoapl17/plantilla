@@ -231,9 +231,15 @@ app.get('/empleado',(req,res)=>{
     
 })
 
-//direccionamiento a la pagina de gestionVentas
-app.get('/gestionVentas',(req,res)=>{
-    res.render('gestionVentas')
+//direccionamiento a la pagina de venta servicios 
+app.get('/ventaServicios',(req,res)=>{
+    res.render('ventaServicios')
+    
+})
+
+//direccionamiento a la pagina de venta productos
+app.get('/ventaProductos',(req,res)=>{
+    res.render('ventaProductos')
     
 })
 
@@ -255,9 +261,15 @@ app.get('/anadirEmpleado',(req,res)=>{
     
 })
 
-//direccionamiento a la pagina de anadirVenta
-app.get('/anadirVenta',(req,res)=>{
-    res.render('anadirVenta')
+//direccionamiento a la pagina de añadir venta servicios
+app.get('/anadirVentaS',(req,res)=>{
+    res.render('anadirVentaS')
+    
+})
+
+//direccionamiento a la pagina de añadir venta productos
+app.get('/anadirVentaP',(req,res)=>{
+    res.render('anadirVentaP')
     
 })
 
@@ -284,11 +296,18 @@ app.get('/editarEmpleado',(req,res)=>{
     
 })
 
-//direccionamiento a la pagina de editarGestionVentas
-app.get('/editarGestionVentas',(req,res)=>{
-    res.render('editarGestionVentas')
+//direccionamiento a la pagina de editar venta productos
+app.get('/editarVentaP',(req,res)=>{
+    res.render('editarVentaP')
     
 })
+
+//direccionamiento a la pagina de editar venta servicios
+app.get('/editarVentaS',(req,res)=>{
+    res.render('editarVentaS')
+    
+})
+
 
 //direccionamiento a la pagina de editarClientes
 app.get('/editarClientes',(req,res)=>{

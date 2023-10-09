@@ -80,6 +80,8 @@ const listarDatos = async () => {
                     body.innerHTML = respuesta
                     contador++;
                 })
+                    
+                
             if (contador === data.usuarios.length) {
                 const newButton = document.querySelectorAll('.editar')
                 newButton.forEach(btn => {
@@ -96,6 +98,7 @@ const listarDatos = async () => {
                     })
                 });
             }
+            
         })
 }
 

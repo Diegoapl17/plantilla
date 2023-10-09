@@ -1,59 +1,60 @@
-<a href="gestionVentas"> <button style="border-radius: 40px; margin-left: 20%" type="button" class="btn btn-primary"><i
+<a href="ventaProductos"> <button style="border-radius: 40px; margin-left: 20%" type="button" class="btn btn-primary"><i
             class="fa-solid fa-backward"></i>Atrás</button></a>
 <div class="d-flex justify-content-center text-center">
 
-    <h1>Añadir venta</h1>
+    <h1>Editar venta </h1>
 
     <form>
 
         <div>
             <div style="padding-top: 7%;" class="d-inline-block ">
                 <h5 style="font-weight: bold;">Datos del la venta</h5>
-                
+
                 <div class="form-group" id="margenForm3">
                     <div style="display: flex; justify-content: space-between; padding: 2%;padding-left: 10%">
                         <div class="col">
-                        <label for="name">Id venta</label>
-                        <div>
-                            <input style="border-radius: 40px" placeholder="1" type="text" class="form-control"
-                                disabled>
+                            <label for="name">Id venta</label>
+                            <div>
+                                <input style="border-radius: 40px" value="1" id="idVenta" placeholder="1" type="text"
+                                    class="form-control" disabled>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label for="exampleFormControlSelect1">Cliente</label>
+                            <select id="cliente" style="border-radius: 40px" class="form-select"
+                                id="exampleFormControlSelect1">
+                                <option></option>
+                                <option id="nn" value="fff">Andres</option>
+                                <option id="nn">Raul</option>
+                            </select>
                         </div>
                     </div>
-                        <div class="col">
-                        <label for="exampleFormControlSelect1">Cliente</label>
-                        <select style="border-radius: 40px" class="form-select" id="exampleFormControlSelect1">
-                            <option id="nn" value="fff">Andres</option>
-                            <option id="nn">Raul</option>
-                        </select>
-                    </div>
-                    </div>
+                    
                     <div style="display: flex; justify-content: space-between; align-items: center">
                         <div class="col">
                             <label for="name">Fecha y hora</label>
                             <div>
-                                <input style="border-radius: 40px" type="text" class="form-control" placeholder="22/08/11"
-                                    disabled>
+                                <input style="border-radius: 40px" type="text" class="form-control" value="22/08/11"
+                                    id="fecha" placeholder="22/08/11" disabled>
                             </div>
                         </div>
                         <div class="col">
-                            <label for="name">Forma de pago</label>
+                            <label for="name">Metodo de pago</label>
                             <div>
-                                <input style="border-radius: 40px" type="text" class="form-control"
+                                <input style="border-radius: 40px" id="pago" type="text" class="form-control"
                                     placeholder="">
                             </div>
                         </div>
                         <div class="col">
-                            <label for="name">Costo mano de obra</label>
-                            <div>
-                                <input style="border-radius: 40px" type="text" class="form-control" placeholder="">
-                            </div>
+                            <label for="exampleFormControlSelect1">Estado</label>
+                            <select id="cliente" style="border-radius: 40px" class="form-select"
+                                id="exampleFormControlSelect1">
+                                <option></option>
+                                <option id="true" value="fff">Activo</option>
+                                <option id="false">Inactivo</option>
+                            </select>
                         </div>
-                        <div class="col">
-                            <label for="name">Valor mano obra</label>
-                            <div>
-                                <input style="border-radius: 40px" type="text" class="form-control" placeholder="">
-                            </div>
-                        </div>
+                       
                     </div>
 
                 </div>
@@ -63,7 +64,9 @@
                 <div id="margenForm2" style="margin-top: 4%;">
                     <div class="col">
                         <label for="exampleFormControlSelect1">Id producto</label>
-                        <select style="border-radius: 40px" class="form-select" id="exampleFormControlSelect1">
+                        <select id="idProducto" style="border-radius: 40px" class="form-select"
+                            id="exampleFormControlSelect1">
+                            <option></option>
                             <option id="nn" value="fff">1</option>
                             <option id="nn">2</option>
                             <option id="nn">3</option>
@@ -72,41 +75,40 @@
                     <div class="col">
                         <label for="name">Precio compra</label>
                         <div>
-                            <input style="border-radius: 40px" type="text" class="form-control" placeholder=""
-                                >
+                            <input style="border-radius: 40px" type="number" id="precioCompra" class="form-control"
+                                placeholder="">
                         </div>
                     </div>
                     <div class="col">
                         <label for="name">Precio venta</label>
                         <div>
-                            <input style="border-radius: 40px" type="text" class="form-control" placeholder=""
-                                >
+                            <input style="border-radius: 40px" type="number" id="precioVenta" class="form-control"
+                                placeholder="">
                         </div>
                     </div>
 
                     <div class="col">
                         <label for="name">Cantidad producto</label>
                         <div>
-                            <input style="border-radius: 40px" type="text" class="form-control" placeholder=""
-                                >
+                            <input style="border-radius: 40px" type="number" id="cantidadProducto" class="form-control"
+                                placeholder="">
                         </div>
                     </div>
 
-
-             
                     <div class="col">
                         <label for="name">Total</label>
                         <div>
-                            <input style="border-radius: 40px" type="text" class="form-control">
+                            <input style="border-radius: 40px" type="text" id="number" class="form-control">
                         </div>
                     </div>
-               
+
 
 
                 </div>
 
             </div>
         </div>
+
 
 
         <div class="d-flex justify-content-center text-center">
@@ -130,7 +132,7 @@
                         showConfirmButton: false,
                     })
                     setTimeout(()=>{
-                        window.location.replace('/gestionVentas');
+                        window.location.replace('/ventaProductos');
                     },2000)
         
                         }
