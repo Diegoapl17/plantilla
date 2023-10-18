@@ -1,18 +1,12 @@
 function registrar() {
-    let idVenta = document.getElementById('idVenta').value
-    let cliente = document.getElementById('cliente').value
-    let fecha = document.getElementById('fecha').value
     let pago = document.getElementById('pago').value
-    let costoManoObra = document.getElementById('costoManoObra').value
     let valorManoObra = document.getElementById('valorManoObra').value
-    let idProducto = document.getElementById('idProducto').value
-    let precioCompra = document.getElementById('precioCompra').value
-    let precioVenta = document.getElementById('precioVenta').value
-    let cantidadProducto = document.getElementById('cantidadProducto').value
-    let total = document.getElementById('total').value
+    let costoInsumos = document.getElementById('costoInsumos').value
+    let idCotizacion = document.getElementById('idCotizacion').value
+    let idCliente = document.getElementById('idCliente').value
 
 
-    if(idVenta=='' || cliente=='' || fecha=='' || pago=='' || costoManoObra=='' || valorManoObra=='' || idProducto=='' || precioCompra=='' || precioVenta=='' || cantidadProducto=='' || total==''){
+    if( pago=='' || valorManoObra=='' || costoInsumos=='' || idCotizacion=='' || idCliente=='' ){
         Swal.fire('No se permiten campos vacios')
     }else{
     Swal.fire(

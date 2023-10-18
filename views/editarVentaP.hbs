@@ -116,7 +116,22 @@
                 onclick="editar()"><i class="fa-solid fa-pen"></i>Editar</button>
             <script>
                 function editar() {
-                    Swal.fire({ 
+
+                let cliente = document.getElementById('cliente').value
+                let pago = document.getElementById('pago').value
+                let estado = document.getElementById('estado').value
+                let idProducto = document.getElementById('idProducto').value
+                let precioCompra = document.getElementById('precioCompra').value
+                let precioVenta = document.getElementById('precioVenta').value
+                let cantidadProducto = document.getElementById('cantidadProducto').value
+                let total = document.getElementById('total').value
+
+            
+
+                if( cliente=='' || pago=='' || estado=='' || idProducto=='' || precioCompra=='' || precioVenta=='' || cantidadProducto=='' || total==''){
+                    Swal.fire('No se permiten campos vacios') 
+                }else{
+                Swal.fire({ 
                         title: 'Estas seguro?',
                         text: "Editaras la siguiente venta",
                         icon: 'warning',
@@ -137,6 +152,8 @@
         
                         }
                     })
+            }
+                    
                 } 
             </script>
     </form>
