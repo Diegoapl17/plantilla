@@ -12,9 +12,9 @@ function ingresar() {
                 text: 'Usuario o contraseña incorrecta!'
               })
             bandera = false;
-            // setTimeout(function() {
-            //     window.location.href = "login";
-            // }, 2000); 
+            setTimeout(function() {
+                window.location.href = "login";
+            }, 2000); 
             
         }
     
@@ -29,7 +29,7 @@ function ingresar() {
         setTimeout(function() {
             window.location.href = "index";
         }, 2000); 
-    } 
+    }
 }
 
 document.getElementById("btnIngresar").addEventListener("click", ingresar);
